@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Uch-7k-Ews">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Guess The Asian-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="NT_GTA_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="33" translatesAutoresizingMaskIntoConstraints="NO" id="aBy-a1-Mvj">
+                                <rect key="frame" x="0.0" y="333.33333333333331" width="393" height="185.66666666666669"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Step 1: Start by taking a picture by clicking the camera button above, or upload a photo by tapping the upload button below." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nSC-mA-fbG">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="61"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Step 2: View the results! Did it guess correctly?!😜" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="STy-K9-7Ex">
+                                        <rect key="frame" x="3.3333333333333428" y="94" width="386.33333333333326" height="20.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hOd-Kc-Ama">
+                                        <rect key="frame" x="114" y="147.33333333333337" width="165" height="38.333333333333343"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" image="square.and.arrow.up" catalog="system" title="Upload a photo"/>
+                                        <connections>
+                                            <action selector="uploadPhotoButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wjz-ed-BCg"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="aBy-a1-Mvj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="62Z-fJ-9YV"/>
+                            <constraint firstAttribute="trailing" secondItem="aBy-a1-Mvj" secondAttribute="trailing" id="8pR-9B-8ad"/>
+                            <constraint firstItem="aBy-a1-Mvj" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="WRb-GH-QLg"/>
+                            <constraint firstItem="aBy-a1-Mvj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="h4t-6L-8wc"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Guess The Asian" id="8Ky-qk-SOW">
+                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="RmB-L6-hjp">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="cameraButtonPressed:" destination="BYZ-38-t0r" id="27L-uV-jxX"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="8PY-k0-cSx" kind="show" identifier="goToResults" id="O1h-Ix-OeZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1066.4122137404579" y="-2.1126760563380285"/>
+        </scene>
+        <!--Results View Controller-->
+        <scene sceneID="auQ-N3-S7F">
+            <objects>
+                <viewController id="8PY-k0-cSx" customClass="ResultsViewController" customModule="NT_GTA_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YzE-hZ-FGS">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="obq-Mi-AVb">
+                                <rect key="frame" x="0.0" y="155" width="393" height="663"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I am confident that you're Korean!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="067-gU-hDn">
+                                        <rect key="frame" x="20" y="0.0" width="353" height="220.33333333333334"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AhF-9g-yDy">
+                                        <rect key="frame" x="11.666666666666657" y="221.33333333333331" width="370" height="220.33333333333331"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="370" id="INo-7E-Aog"/>
+                                        </constraints>
+                                    </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CK2-yS-KEi">
+                                        <rect key="frame" x="0.0" y="442.66666666666657" width="393" height="220.33333333333331"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="067-gU-hDn" firstAttribute="leading" secondItem="obq-Mi-AVb" secondAttribute="leading" constant="20" id="MQa-YN-AIG"/>
+                                    <constraint firstAttribute="trailing" secondItem="067-gU-hDn" secondAttribute="trailing" constant="20" id="RqC-vO-I1I"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="dgW-Om-1nX"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="dgW-Om-1nX" firstAttribute="trailing" secondItem="obq-Mi-AVb" secondAttribute="trailing" id="QtN-ml-wOo"/>
+                            <constraint firstItem="obq-Mi-AVb" firstAttribute="leading" secondItem="dgW-Om-1nX" secondAttribute="leading" id="Xmy-Pr-YbX"/>
+                            <constraint firstItem="dgW-Om-1nX" firstAttribute="bottom" secondItem="obq-Mi-AVb" secondAttribute="bottom" id="bUt-9H-gxY"/>
+                            <constraint firstItem="obq-Mi-AVb" firstAttribute="top" secondItem="dgW-Om-1nX" secondAttribute="top" id="lUJ-l9-mep"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="r6a-0o-5tm"/>
+                    <connections>
+                        <outlet property="resultTextLabel" destination="067-gU-hDn" id="m0C-gA-UfT"/>
+                        <outlet property="userImageImageView" destination="AhF-9g-yDy" id="lBn-d6-xZ8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gc5-Ko-IF1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1956" y="7"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="pmQ-gF-KWm">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Uch-7k-Ews" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="PBq-fV-lfC">
+                        <rect key="frame" x="0.0" y="59" width="393" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" systemColor="systemPinkColor"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Slu-Gt-Lgk"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AOk-6S-oWD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139.69465648854961" y="-2.1126760563380285"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="square.and.arrow.up" catalog="system" width="110" height="128"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
